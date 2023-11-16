@@ -1,0 +1,191 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap");
+
+//// Variables
+// Primary
+$bright-orange: hsl(31, 77%, 52%);
+$dark-cyan: hsl(184, 100%, 22%);
+$very-dark-cyan: hsl(179, 100%, 13%);
+// Neutral
+$transparent-white: hsla(0, 0%, 100%, 0.75); //paragraphs
+$very-light-gray: hsl(0, 0%, 95%); //background, headings, buttons
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+
+  position: relative;
+}
+
+.attribution {
+  font-size: 14px;
+  color: white;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 1);
+  width: 50%;
+
+  position: fixed;
+  bottom: 25px;
+  transform: translate(50%);
+  padding: 12px;
+  border-radius: 32px;
+  font-family: "Lexend Deca", sans-serif;
+
+  a,
+  a:visited {
+    color: $bright-orange;
+  }
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  background-image: url(./images/bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 32px;
+}
+
+.card {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+
+  border-radius: 8px;
+
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+section {
+  padding: 32px;
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &:nth-of-type(1) {
+    background-color: $bright-orange;
+    a {
+      color: $bright-orange;
+    }
+  }
+  &:nth-of-type(2) {
+    background-color: $dark-cyan;
+    a {
+      color: $dark-cyan;
+    }
+  }
+  &:nth-of-type(3) {
+    background-color: $very-dark-cyan;
+    a {
+      color: $very-dark-cyan;
+    }
+  }
+
+  .upr {
+    display: flex;
+    flex-direction: column;
+
+    gap: 21px;
+
+    img {
+      height: 60px;
+      width: 60px;
+      object-fit: contain;
+    }
+
+    h1 {
+      color: $very-light-gray;
+      text-transform: uppercase;
+      font-family: "Big Shoulders Display", cursive;
+      font-size: 32px;
+    }
+
+    p {
+      text-wrap: balance;
+      color: $transparent-white;
+      font-family: "Lexend Deca", sans-serif;
+      font-size: 15px;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 15px;
+
+    background-color: $very-light-gray;
+    width: 140px;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 32px;
+
+    &:hover,
+    &:active {
+      background-color: transparent;
+      border: 2px solid $very-light-gray;
+      color: $very-light-gray;
+    }
+  }
+}
+
+// Media queries
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 32px 32px;
+    .card {
+      // height: auto;
+      flex-direction: column;
+
+      section {
+        min-height: 220px;
+        padding: 16px 32px;
+        .upr {
+          gap: 9px;
+          margin-bottom: 8px;
+
+          h1 {
+            font-size: 24px;
+          }
+          img {
+            height: 45px;
+            width: 45px;
+          }
+          p {
+            font-size: 13px;
+          }
+        }
+        a {
+          font-size: 13px;
+          height: 40px;
+        }
+      }
+    }
+  }
+  .attribution {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .card {
+    flex-direction: row;
+    height: 500px;
+  }
+}
