@@ -155,5 +155,6 @@ section a:hover, section a:active {
   .card {
     flex-direction: row;
     height: 500px;
+    width: 1000px;
   }
 }/*# sourceMappingURL=main.css.map */
